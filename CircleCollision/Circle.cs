@@ -69,11 +69,11 @@ namespace CircleCollision
             if (Distance < TotalWidth)
             {
 
-                float Overlap = TotalWidth - Distance;
+                /*float Overlap = TotalWidth - Distance;
                 if (Overlap >= 1)
                 {
-                    killOverlap(Circle, Overlap);
-                }
+                    //killOverlap(Circle, Overlap);
+                }*/
 
                 return true;
             }
