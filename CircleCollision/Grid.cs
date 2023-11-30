@@ -21,14 +21,14 @@ namespace CircleCollision
 
         public Grid()
         {
-            X = 10;
-            Y = 10;
+            X = -100;
+            Y = -100;
 
             SlotWidth = 30;
             SlotHeight = 30;
 
-            SlotCount_X = 150;
-            SlotCount_Y = 50;
+            SlotCount_X = 72;
+            SlotCount_Y = 44;
         }
 
         public void GenerateSlots()
