@@ -120,7 +120,7 @@ namespace CircleCollision
         #endregion
 
         
-        void CheckCollisions()
+        void CheckCircleCollisions()
         {
             List<Circle> areColliding = new List<Circle>();
             List<(Circle, Circle)> CollidingPairs = new List<(Circle, Circle)>();
@@ -327,7 +327,7 @@ namespace CircleCollision
             KeybindHandler();
             Mouse_ClickHandler();
 
-            CheckCollisions();
+            CheckCircleCollisions();
             EnactCircleVelocity();
 
 
