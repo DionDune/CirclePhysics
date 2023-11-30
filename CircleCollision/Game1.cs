@@ -347,6 +347,20 @@ namespace CircleCollision
             _spriteBatch.Begin();
 
 
+
+            //Grid
+            for (int y = 0; y < Grid.Slots.Count; y++)
+            {
+                for (int x = 0; x < Grid.Slots[y].Count; x++)
+                {
+                    if (Grid.Slots[y][x] != null)
+                    {
+                        _spriteBatch.Draw(Color_White, new Rectangle(Grid.X + (x * Grid.SlotWidth),
+                                                                     Grid.Y + (y * Grid.SlotHeight), Grid.SlotWidth, Grid.SlotHeight), Color.Black);
+                    }
+                }
+            }
+
             //Circles
             foreach (Circle Circle in Circles)
             {
@@ -375,18 +389,6 @@ namespace CircleCollision
                 DrawLine(new Vector2(Circle.X, Circle.Y), Circle.Diameter, Circle.MovementAngle * (float)(Math.PI / 180), Color.Red);
             }
 
-            //Grid
-            for (int y = 0; y < Grid.Slots.Count; y++)
-            {
-                for (int x = 0; x < Grid.Slots[y].Count; x++)
-                {
-                    if (Grid.Slots[y][x] != null)
-                    {
-                        _spriteBatch.Draw(Color_White, new Rectangle(Grid.X + (x * Grid.SlotWidth),
-                                                                     Grid.Y + (y * Grid.SlotHeight), Grid.SlotWidth, Grid.SlotHeight), Color.Black);
-                    }
-                }
-            }
 
 
             _spriteBatch.End();
