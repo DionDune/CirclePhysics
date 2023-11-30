@@ -376,14 +376,14 @@ namespace CircleCollision
             }
 
             //Grid
-            foreach (List<bool?> Row in Grid.Slots)
+            for (int y = 0; y < Grid.Slots.Count; y++)
             {
-                foreach (bool? Slot in Row)
+                for (int x = 0; x < Grid.Slots[y].Count; x++)
                 {
-                    if (Slot != null)
+                    if (Grid.Slots[y][x] != null)
                     {
-                        _spriteBatch.Draw(Color_White, new Rectangle(Grid.X + (Row.IndexOf(Slot) * Grid.SlotWidth),
-                                                                     Grid.Y + (Grid.Slots.IndexOf(Row) * Grid.SlotHeight), Grid.SlotWidth, Grid.SlotHeight), Color.Black);
+                        _spriteBatch.Draw(Color_White, new Rectangle(Grid.X + (x * Grid.SlotWidth),
+                                                                     Grid.Y + (y * Grid.SlotHeight), Grid.SlotWidth, Grid.SlotHeight), Color.Black);
                     }
                 }
             }
