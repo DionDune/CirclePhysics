@@ -116,17 +116,17 @@ namespace CircleCollision
             {
                 Circle.MovementAngle = Angle;
                 Circle.ChangeAngle(180);
-                Circle.MovementVelocity = Math.Abs(MovementVelocity) * 1F;
+                Circle.MovementVelocity = Math.Abs(MovementVelocity) * 0.75F;
 
-                MovementVelocity *= 0.0F;
+                MovementVelocity *= 0.25F;
             }
             else
             {
                 MovementAngle = Angle + 180;
                 ChangeAngle(180);
-                MovementVelocity = Math.Abs(Circle.MovementVelocity) * 1F;
+                MovementVelocity = Math.Abs(Circle.MovementVelocity) * 0.75F;
 
-                Circle.MovementVelocity *= 0.0F;
+                Circle.MovementVelocity *= 0.25F;
             }
         }
     }
