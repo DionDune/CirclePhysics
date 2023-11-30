@@ -79,6 +79,8 @@ namespace CircleCollision
             SelectedCircle = Circles[0];
             Circles[0].Selected = true;
 
+
+            Grid = new Grid();
             Grid.GenerateSlots();
 
 
