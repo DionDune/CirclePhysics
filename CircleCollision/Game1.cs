@@ -375,6 +375,19 @@ namespace CircleCollision
                 Debug.WriteLine(Circle.MovementAngle);
             }
 
+            //Grid
+            foreach (List<bool?> Row in Grid.Slots)
+            {
+                foreach (bool? Slot in Row)
+                {
+                    if (Slot != null)
+                    {
+                        _spriteBatch.Draw(Color_White, new Rectangle(Grid.X + (Row.IndexOf(Slot) * Grid.SlotWidth),
+                                                                     Grid.Y + (Grid.Slots.IndexOf(Row) * Grid.SlotHeight), Grid.SlotWidth, Grid.SlotHeight), Color.Black);
+                    }
+                }
+            }
+
 
             _spriteBatch.End();
 
