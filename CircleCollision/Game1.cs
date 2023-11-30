@@ -373,8 +373,6 @@ namespace CircleCollision
 
                 //CircleDirection
                 DrawLine(new Vector2(Circle.X, Circle.Y), Circle.Diameter, Circle.MovementAngle * (float)(Math.PI / 180), Color.Red);
-
-                Debug.WriteLine(Circle.MovementAngle);
             }
 
             //Grid
