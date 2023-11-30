@@ -18,6 +18,8 @@ namespace CircleCollision
         List<Circle> Circles = new List<Circle>();
         Circle SelectedCircle;
 
+        Grid Grid;
+
         List<Keys> Keys_BeingPressed = new List<Keys>();
         bool Mouse_isClickingLeft;
         bool Mouse_isClickingRight;
@@ -76,6 +78,8 @@ namespace CircleCollision
             });
             SelectedCircle = Circles[0];
             Circles[0].Selected = true;
+
+            Grid.GenerateSlots();
 
 
             Mouse_isClickingLeft = false;
