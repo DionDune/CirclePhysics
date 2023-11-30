@@ -17,6 +17,8 @@ namespace CircleCollision
         public int SlotCount_X { get; set; }
         public int SlotCount_Y { get; set; }
 
+        public List<List<bool?>> Slots { get; set; }
+
         public Grid()
         {
             X = -1000;
@@ -27,6 +29,21 @@ namespace CircleCollision
 
             SlotCount_X = 500;
             SlotCount_Y = 500;
+        }
+
+        public void GenerateSlots()
+        {
+            Slots = new List<List<bool?>>();
+
+            for (int y = 0; y < SlotCount_Y; y++)
+            {
+                Slots.Add(new List<bool?>());
+
+                for (int x = 0; x < SlotCount_X; x++)
+                {
+                    Slots.Last().Add(null);
+                }
+            }
         }
     }
 }
