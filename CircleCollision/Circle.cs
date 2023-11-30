@@ -88,8 +88,10 @@ namespace CircleCollision
 
             float AngleRadians = Angle * (float)(Math.PI / 180);
 
-            X += Overlap * (float)Math.Cos(AngleRadians);
-            Y += Overlap * (float)Math.Sin(AngleRadians);
+            Circle.X += Overlap * (float)Math.Cos(AngleRadians) / 2;
+            Circle.Y += Overlap * (float)Math.Sin(AngleRadians) / 2;
+            X += Overlap * (float)Math.Cos(AngleRadians) / 2;
+            Y += Overlap * (float)Math.Sin(AngleRadians) / 2;
         }
 
         public void EnactVelocity()
