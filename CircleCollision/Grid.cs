@@ -21,8 +21,8 @@ namespace CircleCollision
 
         public Grid()
         {
-            X = -1000;
-            Y = -1000;
+            X = 10;
+            Y = 10;
 
             SlotWidth = 15;
             SlotHeight = 15;
@@ -33,6 +33,8 @@ namespace CircleCollision
 
         public void GenerateSlots()
         {
+            Random random = new Random();
+
             Slots = new List<List<bool?>>();
 
             for (int y = 0; y < SlotCount_Y; y++)
@@ -41,7 +43,14 @@ namespace CircleCollision
 
                 for (int x = 0; x < SlotCount_X; x++)
                 {
-                    Slots.Last().Add(null);
+                    if (random.Next(0, 3) == 0)
+                    {
+                        Slots.Last().Add(true);
+                    }
+                    else
+                    {
+                        Slots.Last().Add(null);
+                    }
                 }
             }
         }
