@@ -269,14 +269,13 @@ namespace CircleCollision
                 //Change Speed of Circle
                 if (Keys_NewlyPressed.Contains(Keys.Up))
                 {
-                    SelectedCircle.ChangeSpeed(1f);
+                    SelectedCircle.ChangeSpeed(1f, false);
                 }
                 if (Keys_NewlyPressed.Contains(Keys.Down))
                 {
-                    SelectedCircle.ChangeSpeed(-1f);
+                    SelectedCircle.ChangeSpeed(-1f, false);
                 }
             }
-
 
 
             if (Keys_NewlyPressed.Contains(Keys.F) && !Keys_BeingPressed.Contains(Keys.F))

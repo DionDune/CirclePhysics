@@ -42,18 +42,21 @@ namespace CircleCollision
                 MovementAngle -= 360;
             }
         }
-        public void ChangeSpeed(float Change)
+        public void ChangeSpeed(float Change, bool Fixed)
         {
-            //MovementVelocity += Change;
-            if (Change < 0)
+            int MaxSpeed = 20;
+
+            if (Fixed)
             {
-                MovementVelocity = -6;
+                MovementVelocity = Change;
             }
             else
             {
-                MovementVelocity = 6;
+                if ((Change < 0 && MovementVelocity > -MaxSpeed) || (Change > 0 && MovementVelocity < MaxSpeed))
+                {
+                    MovementVelocity += Change;
+                }
             }
-
         }
 
         public bool isCollidingWith(Circle Circle)
