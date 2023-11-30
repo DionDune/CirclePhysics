@@ -44,7 +44,7 @@ namespace CircleCollision
         }
         public void ChangeSpeed(float Change, bool Fixed)
         {
-            int MaxSpeed = 20;
+            int MaxSpeed = 30;
 
             if (Fixed)
             {
