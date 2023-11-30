@@ -24,11 +24,11 @@ namespace CircleCollision
             X = 10;
             Y = 10;
 
-            SlotWidth = 15;
-            SlotHeight = 15;
+            SlotWidth = 30;
+            SlotHeight = 30;
 
-            SlotCount_X = 500;
-            SlotCount_Y = 500;
+            SlotCount_X = 150;
+            SlotCount_Y = 50;
         }
 
         public void GenerateSlots()
