@@ -31,7 +31,7 @@ namespace CircleCollision
             SlotCount_Y = 44;
         }
 
-        public void GenerateSlots()
+        public void GenerateSlots(bool Random)
         {
             Random random = new Random();
 
@@ -43,9 +43,16 @@ namespace CircleCollision
 
                 for (int x = 0; x < SlotCount_X; x++)
                 {
-                    if (random.Next(0, 3) == 0)
+                    if (Random)
                     {
-                        Slots.Last().Add(true);
+                        if (random.Next(0, 3) == 0)
+                        {
+                            Slots.Last().Add(true);
+                        }
+                        else
+                        {
+                            Slots.Last().Add(null);
+                        }
                     }
                     else
                     {

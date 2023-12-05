@@ -81,7 +81,7 @@ namespace CircleCollision
 
 
             Grid = new Grid();
-            Grid.GenerateSlots();
+            Grid.GenerateSlots(false);
 
 
             Mouse_isClickingLeft = false;
