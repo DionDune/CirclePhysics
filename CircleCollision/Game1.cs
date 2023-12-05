@@ -184,6 +184,30 @@ namespace CircleCollision
 
         /////////////////////////////////////////
 
+        #region Grid User Interaction
+
+        private void Grid_ChangeBlock(Point Position, bool? State)
+        {
+            Grid.Slots[Position.Y][Position.X] = State;
+        }
+        private void Grid_PlaceBlockHandler(Point MousePosition)
+        {
+            Point GridPosition = new Point((MousePosition.X - Grid.X) / Grid.SlotWidth, (MousePosition.Y - Grid.Y) / Grid.SlotHeight);
+
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            {
+                Grid_ChangeBlock(GridPosition, null);
+            }
+            else
+            {
+                Grid_ChangeBlock(GridPosition, true);
+            }
+        }
+
+        #endregion
+
+        /////////////////////////////////////////
+
         #region UserInput
 
         void Mouse_ClickHandler()
@@ -235,6 +259,8 @@ namespace CircleCollision
 
             if (Mouse.GetState().MiddleButton == ButtonState.Pressed)
             {
+                Grid_PlaceBlockHandler(Mouse.GetState().Position);
+
                 Mouse_isClickingMiddle = true;
             }
             else
