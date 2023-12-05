@@ -23,6 +23,7 @@ namespace CircleCollision
         List<Keys> Keys_BeingPressed = new List<Keys>();
         bool Mouse_isClickingLeft;
         bool Mouse_isClickingRight;
+        bool Mouse_isClickingMiddle;
 
         Texture2D Color_White;
         Texture2D Texture_Circle;
@@ -86,6 +87,7 @@ namespace CircleCollision
 
             Mouse_isClickingLeft = false;
             Mouse_isClickingRight = false;
+            Mouse_isClickingMiddle = false;
 
             base.Initialize();
         }
@@ -229,6 +231,15 @@ namespace CircleCollision
             else
             {
                 Mouse_isClickingRight = false;
+            }
+
+            if (Mouse.GetState().MiddleButton == ButtonState.Pressed)
+            {
+                Mouse_isClickingMiddle = true;
+            }
+            else
+            {
+                Mouse_isClickingMiddle = false;
             }
         }
         void KeybindHandler()
